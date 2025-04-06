@@ -130,42 +130,7 @@
   },
   "quoti": {
     "extensions": [
-      "src/pages/checkout/index.vue",
-      "src/pages/company-clients/index.vue",
-      "src/pages/consulta-cpfcnpj/index.vue",
-      "src/pages/costcenter-reports/index.vue",
-      "src/pages/credentials-new/index.vue",
-      "src/pages/doc-builder/index.vue",
-      "src/pages/faturas/index.vue",
-      "src/pages/lawsuit-consult/index.vue",
-      "src/pages/lawyers/index.vue",
-      "src/pages/pdf-extractor/index.vue",
-      "src/pages/solicitacoes-list/index.vue",
-      "src/pages/solicitacoes-new/index.vue",
-      "src/pages/stats/index.vue",
-      "src/pages/system-status/index.vue",
-      "src/pages/tags/index.vue",
-      "src/pages/tags-files/index.vue",
-      "src/pages/templates/index.vue",
-      "src/pages/tutorials-legis/index.vue",
-      "src/pages/metrics/index.vue",
-      "src/pages/document-template/index.vue",
-      "src/pages/authorize-whatsapp/index.vue",
-      "src/pages/users/index.vue",
-      "src/pages/docs-historic/index.vue",
-      "src/pages/marketplace-document-template/index.vue",
-      "src/pages/marketplace-list-documents-templates/index.vue",
-      "src/pages/marketplace-publish-document-template/index.vue",
-      "src/pages/marketplace-checkout-document-template/index.vue",
-      "src/pages/onboarding/index.vue",
-      "src/pages/management/index.vue",
-      "src/pages/marketplace-update-template/index.vue",
-      "src/pages/plans/index.vue",
-      "src/pages/self-onboarding/index.vue",
-      "src/pages/support/solicitacoes/index.vue",
-      "src/pages/support/solicitacao/index.vue",
-      "src/components/dialogs/batch-protocols/index.vue",
-      "src/components/dialogs/batch-protocol-content/index.vue"
+      "src/components/menu-lateral/index.vue"
     ]
   }
 }
