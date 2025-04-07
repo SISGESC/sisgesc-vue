@@ -1,137 +1,139 @@
 <template lang="pug">
-v-container
-  v-row
-    v-col.d-flex.justify-space-between.align-center(cols="12")
-      h1.text-h4.mb-4 Turmas
-      v-btn(color="primary" @click="openCreateDialog")
-        v-icon(left) mdi-plus
-        | Nova Turma
+div
+  qt-header(title="Gestão Turmas")
+  v-container
+    v-row
+      v-col.d-flex.justify-space-between.align-center(cols="12")
+        //- h1.text-h4.mb-4 Turmas
+        v-btn(color="primary" @click="openCreateDialog")
+          v-icon(left) mdi-plus
+          | Nova Turma
 
-  v-card
-    v-card-text
-      v-data-table(
-        :headers="headers"
-        :items="classes"
-        sort-by="name"
-        :items-per-page="10"
-        :search="search"
-        :loading="loading"
-      )
-        template(v-slot:top)
-          v-text-field.mb-4(
-            v-model="search"
-            label="Buscar"
-            single-line
-            hide-details
-            prepend-icon="mdi-magnify"
-          )
-
-        template(v-slot:item.status="{ item }")
-          v-chip(
-            :color="item.status === 'inactive' ? 'error' : 'success'"
-            small
-          ) {{ item.status === 'inactive' ? 'Inativa' : 'Ativa' }}
-
-        template(v-slot:item.actions="{ item }")
-          v-btn(
-            color="primary"
-            icon
-            small
-            @click="editClass(item)"
-          )
-            v-icon mdi-pencil
-
-          v-btn(
-            color="error"
-            icon
-            small
-            @click="confirmDelete(item)"
-          )
-            v-icon mdi-delete
-
-        template(v-slot:no-data)
-          .text-center.py-4
-            | Nenhuma turma encontrada
-
-  v-dialog(v-model="dialog" max-width="600px")
     v-card
-      v-card-title
-        span.text-h5 {{ formTitle }}
       v-card-text
-        v-container
-          v-row
-            v-col(cols="12")
-              v-text-field(
-                v-model="editedItem.name"
-                label="Nome da Turma"
-                required
-                :rules="[(v) => !!v || 'Nome é obrigatório']"
-              )
-            v-col(cols="12" sm="6")
-              v-text-field(
-                v-model="editedItem.capacity"
-                type="number"
-                label="Capacidade"
-                required
-                :rules="[(v) => !!v || 'Capacidade é obrigatória']"
-              )
-            v-col(cols="12" sm="6")
-              v-select(
-                v-model="editedItem.grade"
-                label="Série"
-                :items="grades"
-                required
-                :rules="[(v) => !!v || 'Série é obrigatória']"
-              )
-            v-col(cols="12")
-              v-select(
-                v-model="editedItem.teacherId"
-                label="Professor Responsável"
-                :items="teachers"
-                item-text="name"
-                item-value="id"
-                required
-                :rules="[(v) => !!v || 'Professor é obrigatório']"
-              )
-            v-col(cols="12")
-              v-select(
-                v-model="editedItem.schedule"
-                label="Horário"
-                :items="schedules"
-                required
-                :rules="[(v) => !!v || 'Horário é obrigatório']"
-              )
-            v-col(cols="12")
-              v-switch(
-                v-model="editedItem.status"
-                label="Turma Ativa"
-                :true-value="'active'"
-                :false-value="'inactive'"
-              )
+        v-data-table(
+          :headers="headers"
+          :items="classes"
+          sort-by="name"
+          :items-per-page="10"
+          :search="search"
+          :loading="loading"
+        )
+          template(v-slot:top)
+            v-text-field.mb-4(
+              v-model="search"
+              label="Buscar"
+              single-line
+              hide-details
+              prepend-icon="mdi-magnify"
+            )
 
-      v-card-actions
-        v-spacer
-        v-btn(
-          color="grey darken-1"
-          text
-          @click="closeDialog"
-        ) Cancelar
-        v-btn(color="primary" @click="saveClass") Salvar
+          template(v-slot:item.status="{ item }")
+            v-chip(
+              :color="item.status === 'inactive' ? 'error' : 'success'"
+              small
+            ) {{ item.status === 'inactive' ? 'Inativa' : 'Ativa' }}
 
-  v-dialog(v-model="deleteDialog" max-width="400px")
-    v-card
-      v-card-title
-        span.text-h5 Confirmar Exclusão
-      v-card-text
-        | Tem certeza que deseja excluir a turma "{{ editedItem.name }}"?
-      v-card-actions
-        v-spacer
-        v-btn(
-          color="grey darken-1"
-          text
-          @click="deleteDialog = false"
-        ) Cancelar
-        v-btn(color="error" @click="deleteClass") Excluir
+          template(v-slot:item.actions="{ item }")
+            v-btn(
+              color="primary"
+              icon
+              small
+              @click="editClass(item)"
+            )
+              v-icon mdi-pencil
+
+            v-btn(
+              color="error"
+              icon
+              small
+              @click="confirmDelete(item)"
+            )
+              v-icon mdi-delete
+
+          template(v-slot:no-data)
+            .text-center.py-4
+              | Nenhuma turma encontrada
+
+    v-dialog(v-model="dialog" max-width="600px")
+      v-card
+        v-card-title
+          span.text-h5 {{ formTitle }}
+        v-card-text
+          v-container
+            v-row
+              v-col(cols="12")
+                v-text-field(
+                  v-model="editedItem.name"
+                  label="Nome da Turma"
+                  required
+                  :rules="[(v) => !!v || 'Nome é obrigatório']"
+                )
+              v-col(cols="12" sm="6")
+                v-text-field(
+                  v-model="editedItem.capacity"
+                  type="number"
+                  label="Capacidade"
+                  required
+                  :rules="[(v) => !!v || 'Capacidade é obrigatória']"
+                )
+              v-col(cols="12" sm="6")
+                v-select(
+                  v-model="editedItem.grade"
+                  label="Série"
+                  :items="grades"
+                  required
+                  :rules="[(v) => !!v || 'Série é obrigatória']"
+                )
+              v-col(cols="12")
+                v-select(
+                  v-model="editedItem.teacherId"
+                  label="Professor Responsável"
+                  :items="teachers"
+                  item-text="name"
+                  item-value="id"
+                  required
+                  :rules="[(v) => !!v || 'Professor é obrigatório']"
+                )
+              v-col(cols="12")
+                v-select(
+                  v-model="editedItem.schedule"
+                  label="Horário"
+                  :items="schedules"
+                  required
+                  :rules="[(v) => !!v || 'Horário é obrigatório']"
+                )
+              v-col(cols="12")
+                v-switch(
+                  v-model="editedItem.status"
+                  label="Turma Ativa"
+                  :true-value="'active'"
+                  :false-value="'inactive'"
+                )
+
+        v-card-actions
+          v-spacer
+          v-btn(
+            color="grey darken-1"
+            text
+            @click="closeDialog"
+          ) Cancelar
+          v-btn(color="primary" @click="saveClass") Salvar
+
+    v-dialog(v-model="deleteDialog" max-width="400px")
+      v-card
+        v-card-title
+          span.text-h5 Confirmar Exclusão
+        v-card-text
+          | Tem certeza que deseja excluir a turma "{{ editedItem.name }}"?
+        v-card-actions
+          v-spacer
+          v-btn(
+            color="grey darken-1"
+            text
+            @click="deleteDialog = false"
+          ) Cancelar
+          v-btn(color="error" @click="deleteClass") Excluir
 </template>
 
 <script>

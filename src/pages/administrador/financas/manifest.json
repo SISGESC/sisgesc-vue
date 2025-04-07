@@ -1,0 +1,14 @@
+{
+  "extensionId": 100121,
+  "type": "build",
+  "name": "administrador-financas",
+  "extensionUUID": "603e4d76-6cdf-4a00-a184-8665c74f5d45",
+  "meta": {
+    "public": null,
+    "configs": {},
+    "hasDrawer": null,
+    "hasToolbar": null,
+    "ignoreBasePath": null
+  },
+  "institution": "sisgesc"
+}
