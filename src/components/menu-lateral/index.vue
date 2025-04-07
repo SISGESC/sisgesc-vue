@@ -82,7 +82,7 @@ script.src = 'https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js'
 document.head.appendChild(script)
 
 export default {
-  name: 'erudio-app-drawer',
+  name: 'SisgescAppDrawer',
   components: {},
   props: {},
   data() {
