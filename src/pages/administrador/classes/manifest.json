@@ -1,0 +1,14 @@
+{
+  "extensionId": 100119,
+  "type": "build",
+  "name": "admnistrador-turmas",
+  "extensionUUID": "0bf342b1-6f5c-4cc0-9a78-5c3d850941bc",
+  "meta": {
+    "public": false,
+    "configs": null,
+    "hasDrawer": true,
+    "hasToolbar": true,
+    "ignoreBasePath": false
+  },
+  "institution": "sisgesc"
+}
