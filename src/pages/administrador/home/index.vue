@@ -1,102 +1,104 @@
 <template lang="pug">
-v-container
-  v-row
-    v-col(cols="12")
-      h1.text-h4.mb-4 Painel Administrativo
+div
+  qt-header(title="Painel Administrativo")
+  v-container
+    //- v-row
+    //-   v-col(cols="12")
+    //-     h1.text-h4.mb-4 Painel Administrativo
 
-  v-row
-    v-col(cols="12" md="4")
-      v-card.mb-4
-        v-card-text
-          v-row(align="center")
-            v-col(cols="auto")
-              v-icon.mr-4(color="success" size="48") mdi-cash-check
-            v-col
-              .text-h4 {{ formatCurrency(stats.received) }}
-              .text-subtitle-1 Pagamentos Recebidos
+    v-row
+      v-col(cols="12" md="4")
+        v-card.mb-4
+          v-card-text
+            v-row(align="center")
+              v-col(cols="auto")
+                v-icon.mr-4(color="success" size="48") mdi-cash-check
+              v-col
+                .text-h4 {{ formatCurrency(stats.received) }}
+                .text-subtitle-1 Pagamentos Recebidos
 
-    v-col(cols="12" md="4")
-      v-card.mb-4
-        v-card-text
-          v-row(align="center")
-            v-col(cols="auto")
-              v-icon.mr-4(color="warning" size="48") mdi-cash-clock
-            v-col
-              .text-h4 {{ formatCurrency(stats.pending) }}
-              .text-subtitle-1 Pagamentos Pendentes
+      v-col(cols="12" md="4")
+        v-card.mb-4
+          v-card-text
+            v-row(align="center")
+              v-col(cols="auto")
+                v-icon.mr-4(color="warning" size="48") mdi-cash-clock
+              v-col
+                .text-h4 {{ formatCurrency(stats.pending) }}
+                .text-subtitle-1 Pagamentos Pendentes
 
-    v-col(cols="12" md="4")
-      v-card.mb-4
-        v-card-text
-          v-row(align="center")
-            v-col(cols="auto")
-              v-icon.mr-4(color="info" size="48") mdi-chart-line
-            v-col
-              .text-h4 {{ formatCurrency(stats.total) }}
-              .text-subtitle-1 Total de Pagamentos
+      v-col(cols="12" md="4")
+        v-card.mb-4
+          v-card-text
+            v-row(align="center")
+              v-col(cols="auto")
+                v-icon.mr-4(color="info" size="48") mdi-chart-line
+              v-col
+                .text-h4 {{ formatCurrency(stats.total) }}
+                .text-subtitle-1 Total de Pagamentos
 
-  v-row
-    v-col(cols="12")
-      h2.text-h5.mb-4 Gerenciamento
+    v-row
+      v-col(cols="12")
+        h2.text-h5.mb-4 Gerenciamento
 
-  v-row
-    v-col(cols="12" md="4")
-      v-card.mb-4(hover @click="navigateTo('admnistrador-alunos')")
-        v-card-title
-          v-row(align="center")
-            v-col(cols="auto")
-              v-icon(color="primary" size="36") mdi-account-group
-            v-col
-              .text-h6 Gestão de Alunos
-        v-card-text
-          | Cadastre, edite e gerencie os alunos da instituição.
-        v-card-actions
-          v-spacer
-          v-btn(color="primary" text)
-            | Acessar
-            v-icon(right) mdi-arrow-right
+    v-row
+      v-col(cols="12" md="4")
+        v-card.mb-4(hover @click="navigateTo('admnistrador-alunos')")
+          v-card-title
+            v-row(align="center")
+              v-col(cols="auto")
+                v-icon(color="primary" size="36") mdi-account-group
+              v-col
+                .text-h6 Gestão de Alunos
+          v-card-text
+            | Cadastre, edite e gerencie os alunos da instituição.
+          v-card-actions
+            v-spacer
+            v-btn(color="primary" text)
+              | Acessar
+              v-icon(right) mdi-arrow-right
 
-    v-col(cols="12" md="4")
-      v-card.mb-4(hover @click="navigateTo('admnistrador-turmas')")
-        v-card-title
-          v-row(align="center")
-            v-col(cols="auto")
-              v-icon(color="primary" size="36") mdi-school
-            v-col
-              .text-h6 Gestão de Turmas
-        v-card-text
-          | Crie e gerencie turmas, horários e professores.
-        v-card-actions
-          v-spacer
-          v-btn(color="primary" text)
-            | Acessar
-            v-icon(right) mdi-arrow-right
+      v-col(cols="12" md="4")
+        v-card.mb-4(hover @click="navigateTo('admnistrador-turmas')")
+          v-card-title
+            v-row(align="center")
+              v-col(cols="auto")
+                v-icon(color="primary" size="36") mdi-school
+              v-col
+                .text-h6 Gestão de Turmas
+          v-card-text
+            | Crie e gerencie turmas, horários e professores.
+          v-card-actions
+            v-spacer
+            v-btn(color="primary" text)
+              | Acessar
+              v-icon(right) mdi-arrow-right
 
-    v-col(cols="12" md="4")
-      v-card.mb-4(hover @click="navigateTo('administrador-financas')")
-        v-card-title
-          v-row(align="center")
-            v-col(cols="auto")
-              v-icon(color="primary" size="36") mdi-cash-multiple
-            v-col
-              .text-h6 Gestão Financeira
-        v-card-text
-          | Controle pagamentos, mensalidades e relatórios financeiros.
-        v-card-actions
-          v-spacer
-          v-btn(color="primary" text)
-            | Acessar
-            v-icon(right) mdi-arrow-right
+      v-col(cols="12" md="4")
+        v-card.mb-4(hover @click="navigateTo('administrador-financas')")
+          v-card-title
+            v-row(align="center")
+              v-col(cols="auto")
+                v-icon(color="primary" size="36") mdi-cash-multiple
+              v-col
+                .text-h6 Gestão Financeira
+          v-card-text
+            | Controle pagamentos, mensalidades e relatórios financeiros.
+          v-card-actions
+            v-spacer
+            v-btn(color="primary" text)
+              | Acessar
+              v-icon(right) mdi-arrow-right
 
-  v-row
-    v-col(cols="12")
-      h2.text-h5.mb-4 Gráfico de Pagamentos
+    v-row
+      v-col(cols="12")
+        h2.text-h5.mb-4 Gráfico de Pagamentos
 
-  v-row
-    v-col(cols="12")
-      v-card
-        v-card-text
-          canvas#paymentsChart(height="300")
+    v-row
+      v-col(cols="12")
+        v-card
+          v-card-text
+            canvas#paymentsChart(height="300")
 </template>
 
 <script>

@@ -134,7 +134,8 @@
       "src/pages/responsavel/index.vue",
       "src/pages/administrador/home/index.vue",
       "src/pages/administrador/classes/index.vue",
-      "src/pages/administrador/financas/index.vue"
+      "src/pages/administrador/financas/index.vue",
+      "src/pages/administrador/alunos/index.vue"
     ]
   }
 }

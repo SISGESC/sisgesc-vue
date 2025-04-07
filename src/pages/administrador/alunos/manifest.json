@@ -1,0 +1,14 @@
+{
+  "extensionId": 100120,
+  "type": "build",
+  "name": "admnistrador-alunos",
+  "extensionUUID": "ce606738-d315-4f55-b88f-bd60277b3b22",
+  "meta": {
+    "public": null,
+    "configs": {},
+    "hasDrawer": null,
+    "hasToolbar": null,
+    "ignoreBasePath": null
+  },
+  "institution": "sisgesc"
+}
