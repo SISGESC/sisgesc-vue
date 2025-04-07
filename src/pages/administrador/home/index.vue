@@ -41,7 +41,7 @@ v-container
 
   v-row
     v-col(cols="12" md="4")
-      v-card.mb-4(hover @click="navigateTo('students')")
+      v-card.mb-4(hover @click="navigateTo('admnistrador-alunos')")
         v-card-title
           v-row(align="center")
             v-col(cols="auto")
@@ -57,7 +57,7 @@ v-container
             v-icon(right) mdi-arrow-right
 
     v-col(cols="12" md="4")
-      v-card.mb-4(hover @click="navigateTo('classes')")
+      v-card.mb-4(hover @click="navigateTo('admnistrador-turmas')")
         v-card-title
           v-row(align="center")
             v-col(cols="auto")
@@ -73,7 +73,7 @@ v-container
             v-icon(right) mdi-arrow-right
 
     v-col(cols="12" md="4")
-      v-card.mb-4(hover @click="navigateTo('financial')")
+      v-card.mb-4(hover @click="navigateTo('administrador-financas')")
         v-card-title
           v-row(align="center")
             v-col(cols="auto")
@@ -204,8 +204,11 @@ export default {
     formatCurrency(value) {
       return value.toFixed(2).replace('.', ',')
     },
-    navigateTo(route) {
-      this.$router.push({ name: route })
+    navigateTo(path) {
+      // this.$router.push({ name: route })
+      this.$store.dispatch('route/openExtension', {
+        path: path
+      })
     }
   }
 }

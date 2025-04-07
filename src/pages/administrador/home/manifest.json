@@ -1,0 +1,14 @@
+{
+  "extensionId": 100118,
+  "type": "build",
+  "name": "home-administrador",
+  "extensionUUID": "faa8656a-4d5b-427a-82e0-536e95d255e2",
+  "meta": {
+    "public": false,
+    "configs": {},
+    "hasDrawer": true,
+    "hasToolbar": true,
+    "ignoreBasePath": false
+  },
+  "institution": "sisgesc"
+}
