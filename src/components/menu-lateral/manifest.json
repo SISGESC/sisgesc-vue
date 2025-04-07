@@ -1,0 +1,12 @@
+{
+  "extensionId": 100088,
+  "type": "build",
+  "name": "navigation Drawer",
+  "extensionUUID": "0862651a-ca8c-45d3-a2a4-56285908f50e",
+  "institution": "sisgesc",
+  "meta": {
+    "public": null,
+    "hasDrawer": true,
+    "hasToolbar": true
+  }
+}

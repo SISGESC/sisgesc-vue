@@ -50,7 +50,7 @@ export default async function setupQuotiCLI({ forceLogin = false } = {}) {
       collectAuthToken: true
     })
 
-    await shelljs('qt', ['login', '-f', '<<<', 'legis', '<<<', token]) // This is not working yet (The quoti-cli don't accept token in this way)
+    await shelljs('qt', ['login', '-f', '<<<', 'sisgesc', '<<<', token]) // This is not working yet (The quoti-cli don't accept token in this way)
 
     CONFIGS.PAGE.DEV_SESSION_ID = foundCurrentDevSessionId()
 
