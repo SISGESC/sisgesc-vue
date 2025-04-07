@@ -101,9 +101,9 @@ export default {
       selectedChildPayments: [],
       loadingPayments: false,
       paymentHeaders: [
-        { text: 'Descrição', value: 'description' },
-        { text: 'Valor', value: 'amount' },
+        // { text: 'Descrição', value: 'description' },
         { text: 'Vencimento', value: 'dueDate' },
+        { text: 'Valor', value: 'amount' },
         { text: 'Pagamento', value: 'paymentDate' },
         { text: 'Status', value: 'status' }
       ]
@@ -225,7 +225,7 @@ export default {
       return format(new Date(date), 'dd/MM/yyyy', { locale: ptBR })
     },
     formatCurrency(value) {
-      return value.toFixed(2).replace('.', ',')
+      return value //?.toFixed(2)?.replace('.', ',') ?? value
     },
     getPaymentStatusColor(status) {
       const colors = {
