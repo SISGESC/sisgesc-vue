@@ -21,7 +21,7 @@
   "dependencies": {
     "@prettier/plugin-pug": "^1.19.3",
     "@vue/cli": "^5.0.4",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "bluebird": "^3.7.2",
     "chart.js": "^2.9.4",
     "check-password-strength": "^2.0.5",
@@ -34,7 +34,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vuetify": "^1.1.0",
-    "firebase": "^8.10.1",
+    "firebase": "^8.2.3",
     "fuse.js": "^6.4.6",
     "handlebars": "^4.7.8",
     "handlebars-delimiters": "^1.0.0",
@@ -130,7 +130,10 @@
   },
   "quoti": {
     "extensions": [
-      "src/components/menu-lateral/index.vue"
+      "src/components/menu-lateral/index.vue",
+      "src/pages/responsavel/index.vue",
+      "src/pages/administrador/home/index.vue",
+      "src/pages/administrador/classes/index.vue"
     ]
   }
 }
