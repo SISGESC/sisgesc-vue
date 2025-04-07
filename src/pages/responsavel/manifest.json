@@ -1,0 +1,14 @@
+{
+  "extensionId": 100117,
+  "type": "build",
+  "name": "home-reponsavel",
+  "extensionUUID": "d244bd61-d9d3-4a32-8bcd-ddbcd5962dc7",
+  "meta": {
+    "public": false,
+    "configs": {},
+    "hasDrawer": true,
+    "hasToolbar": true,
+    "ignoreBasePath": false
+  },
+  "institution": "sisgesc"
+}
